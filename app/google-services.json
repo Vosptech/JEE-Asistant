@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "580967943535",
+    "project_id": "jee-asistant-cd0d5",
+    "storage_bucket": "jee-asistant-cd0d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580967943535:android:01ea875d01157b9583ec9a",
+        "android_client_info": {
+          "package_name": "com.example.jeeasistant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "580967943535-6hps2bcpkruva518vl712pihkp37h6h4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jeeasistant",
+            "certificate_hash": "2bd6af8803e7749ac5c8f9e431818437bcde5952"
+          }
+        },
+        {
+          "client_id": "580967943535-nsbnnt67msoj5qh9pi12k223mhm4j8o4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9TZDphT5TUhdO5Xx0yDp7UhZFHYGXmdU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "580967943535-nsbnnt67msoj5qh9pi12k223mhm4j8o4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
