@@ -35,7 +35,6 @@ class emailRegisterActivity : AppCompatActivity() {
         tvpassword = findViewById(R.id.emailPwd)
         tvreg = findViewById(R.id.registerBtn)
 
-
         tvreg.setOnClickListener {
 
             val semail = tvemail.text.toString().trim()

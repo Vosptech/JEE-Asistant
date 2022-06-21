@@ -18,10 +18,10 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-        <activity
+        <activity android:windowSoftInputMode="adjustPan"
             android:name=".emailRegisterActivity"
             android:exported="false" />
-        <activity
+        <activity android:windowSoftInputMode="adjustResize"
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
