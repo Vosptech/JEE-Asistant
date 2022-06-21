@@ -90,11 +90,13 @@ class LoginActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         val account = GoogleSignIn.getLastSignedInAccount(this)
-
+        val currentUser = auth.currentUser
         if(account!=null) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
+
     }
 
     private fun signIn() {

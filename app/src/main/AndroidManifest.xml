@@ -4,6 +4,7 @@
     package="com.example.jeeasistant">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -16,14 +17,19 @@
         android:theme="@style/Theme.JEEAsistant"
         tools:targetApi="31">
         <activity
+            android:name=".OTP_verify"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
-        <activity android:windowSoftInputMode="adjustPan"
+        <activity
             android:name=".emailRegisterActivity"
-            android:exported="false" />
-        <activity android:windowSoftInputMode="adjustResize"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
             android:name=".LoginActivity"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
