@@ -21,7 +21,6 @@
             android:layout_height="46dp"
             android:layout_gravity="center"
             android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
             android:background="@drawable/bg_otp_box"
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
@@ -30,7 +29,7 @@
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
-            tools:ignore="Label For"
+            tools:ignore="Label For,LabelFor"
             android:maxLines="1"
             android:gravity="center" />
 
@@ -130,42 +129,16 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="60dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Did't receive the otp  "
-            android:textColor="@color/dark_grey"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Resend OTP"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-    </LinearLayout>
 
     <Button
         android:id="@+id/verify_btn"
         android:layout_width="307dp"
         android:layout_height="59dp"
-        android:text="Submit"
-
+        android:layout_marginTop="50dp"
+        android:text="@string/submit"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -175,19 +148,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_mark_email_read_24" />
+        app:srcCompat="@drawable/ic_baseline_mark_email_read_24"
+        android:contentDescription="@string/icon" />
 
     <TextView
         android:id="@+id/ph_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="OTP:"
+        android:text="@string/_91_xxxxxxxxx"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.331"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/you_will_receive_otp_on"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

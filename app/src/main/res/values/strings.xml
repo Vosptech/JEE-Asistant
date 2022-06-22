@@ -13,6 +13,13 @@
 
     <string name="your_web_client_id">580967943535-nsbnnt67msoj5qh9pi12k223mhm4j8o4.apps.googleusercontent.com</string>
     <string name="default_web_client_id_auth">580967943535-6hps2bcpkruva518vl712pihkp37h6h4.apps.googleusercontent.com</string>
+    <string name="submit">Submit</string>
+    <string name="_91_xxxxxxxxx">+91 xxxxxxxxx</string>
+    <string name="you_will_receive_otp_on">You will receive OTP on:</string>
+    <string name="icon">icon</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="verify">Verify</string>
+    <string name="you_will_get_otp_on_this_phone_number">You will get OTP on this Phone number</string>
 
 
 </resources>
