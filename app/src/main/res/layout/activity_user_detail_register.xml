@@ -7,7 +7,7 @@
     tools:context=".User_Detail_Register">
 
     <EditText
-        android:id="@+id/phoneName"
+        android:id="@+id/regName"
         android:layout_width="300dp"
         android:layout_height="55dp"
         android:background="@drawable/edit_text_bg"
@@ -20,13 +20,13 @@
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:textColorHint="#616161"
-        app:layout_constraintBottom_toTopOf="@+id/phoneDOB"
+        app:layout_constraintBottom_toTopOf="@+id/regDOB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/phoneDOB"
+        android:id="@+id/regDOB"
         android:layout_width="300dp"
         android:layout_height="55dp"
         android:background="@drawable/edit_text_bg"
@@ -39,7 +39,7 @@
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:textColorHint="#616161"
-        app:layout_constraintBottom_toTopOf="@+id/phoneStd"
+        app:layout_constraintBottom_toTopOf="@+id/regStd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
@@ -47,7 +47,7 @@
 
 
     <EditText
-        android:id="@+id/phoneStd"
+        android:id="@+id/regStd"
         android:layout_width="300dp"
         android:layout_height="55dp"
         android:background="@drawable/edit_text_bg"
@@ -60,13 +60,13 @@
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:textColorHint="#616161"
-        app:layout_constraintBottom_toTopOf="@+id/phonePwd"
+        app:layout_constraintBottom_toTopOf="@+id/regUserName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/phonePwd"
+        android:id="@+id/regPwd"
         android:layout_width="300dp"
         android:layout_height="55dp"
         android:background="@drawable/edit_text_bg"
@@ -84,6 +84,25 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <EditText
+        android:id="@+id/regUserName"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:background="@drawable/edit_text_bg"
+        android:drawableStart="@drawable/ic_outline_person_outline_24"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="Username"
+        android:layout_marginBottom="30dp"
+        android:inputType="textVisiblePassword|textNoSuggestions"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColorHint="#616161"
+        app:layout_constraintBottom_toTopOf="@+id/regPwd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <ImageView
         android:id="@+id/imageView2"
@@ -92,7 +111,7 @@
         android:layout_marginBottom="60dp"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/phoneName"
+        app:layout_constraintBottom_toTopOf="@+id/regName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
@@ -122,5 +141,5 @@
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toTopOf="@+id/reg_Btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phonePwd" />
+        app:layout_constraintTop_toBottomOf="@+id/regPwd" />
 </androidx.constraintlayout.widget.ConstraintLayout>
