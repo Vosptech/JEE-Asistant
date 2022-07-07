@@ -4,105 +4,106 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User_Detail_Register">
+    tools:context=".loginRelatedActivities.UserDetailRegister">
 
-    <EditText
-        android:id="@+id/regName"
-        android:layout_width="300dp"
-        android:layout_height="55dp"
-        android:background="@drawable/edit_text_bg"
-        android:drawableStart="@drawable/ic_baseline_account_circle_24"
-        android:drawablePadding="12dp"
-        android:ems="10"
-        android:hint="@string/name"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/NameOutbox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="305dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
-        android:inputType="textPersonName"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:textColorHint="#616161"
-        app:layout_constraintBottom_toTopOf="@+id/regDOB"
+        android:hint="@string/profile_name"
+        app:layout_constraintBottom_toTopOf="@+id/DOBoutbox"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:startIconDrawable="@drawable/ic_outline_person_outline_24">
 
-    <EditText
-        android:id="@+id/regDOB"
-        android:layout_width="300dp"
-        android:layout_height="55dp"
-        android:background="@drawable/edit_text_bg"
-        android:drawableStart="@drawable/ic_baseline_date_range_24"
-        android:drawablePadding="12dp"
-        android:ems="10"
-        android:hint="@string/date_of_birth"
-        android:inputType="date"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/regName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:maxLength="50"
+            android:layout_gravity="center_horizontal"
+            android:inputType="textPersonName" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/DOBoutbox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="305dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:textColorHint="#616161"
-        app:layout_constraintBottom_toTopOf="@+id/regStd"
+        android:hint="@string/DOB"
+        app:layout_constraintBottom_toTopOf="@+id/UsernameOutbox"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:startIconDrawable="@drawable/ic_baseline_date_range_24">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/regDOB"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_horizontal"
+            android:inputType="date"
 
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            />
 
-    <EditText
-        android:id="@+id/regStd"
-        android:layout_width="300dp"
-        android:layout_height="55dp"
-        android:background="@drawable/edit_text_bg"
-        android:drawableStart="@drawable/ic_baseline_school_24"
-        android:drawablePadding="12dp"
-        android:ems="10"
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/UsernameOutbox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="305dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
-        android:hint="@string/Std"
-        android:inputType="number"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:textColorHint="#616161"
-        app:layout_constraintBottom_toTopOf="@+id/regUserName"
+        android:hint="@string/username"
+        app:layout_constraintBottom_toTopOf="@+id/BioOutbox"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:startIconDrawable="@drawable/ic_baseline_account_circle_24">
 
-    <EditText
-        android:id="@+id/regPwd"
-        android:layout_width="300dp"
-        android:layout_height="55dp"
-        android:background="@drawable/edit_text_bg"
-        android:drawableStart="@drawable/ic_baseline_lock_24"
-        android:drawablePadding="12dp"
-        android:ems="10"
-        android:hint="@string/password"
-        android:layout_marginBottom="40dp"
-        android:inputType="textPassword"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:textColorHint="#616161"
-        app:layout_constraintBottom_toTopOf="@+id/reg_Btn"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/regUserName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_horizontal"
+            android:inputType="textCapWords"
+            android:textAllCaps="false"
+            android:maxLength="30"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/BioOutbox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="305dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:hint="@string/bio"
+        app:counterMaxLength="30"
+        app:counterEnabled="true"
+        app:layout_constraintBottom_toTopOf="@id/reg_Btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:startIconDrawable="@drawable/ic_outline_bio_24">
 
-    <EditText
-        android:id="@+id/regUserName"
-        android:layout_width="300dp"
-        android:layout_height="55dp"
-        android:background="@drawable/edit_text_bg"
-        android:drawableStart="@drawable/ic_outline_person_outline_24"
-        android:drawablePadding="12dp"
-        android:ems="10"
-        android:hint="Username"
-        android:layout_marginBottom="30dp"
-        android:inputType="textVisiblePassword|textNoSuggestions"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:textColorHint="#616161"
-        app:layout_constraintBottom_toTopOf="@+id/regPwd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/regBio"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:inputType="text"
+            android:maxLength="30"
+            />
 
+    </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
         android:id="@+id/imageView2"
@@ -111,12 +112,15 @@
         android:layout_marginBottom="60dp"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/regName"
+        app:layout_constraintBottom_toTopOf="@+id/NameOutbox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_outline_how_to_reg_24" />
+        app:srcCompat="@drawable/ic_outline_how_to_reg_24"
+        android:contentDescription="@string/icon_" />
+
+
     <Button
         android:id="@+id/reg_Btn"
         android:layout_width="match_parent"
@@ -134,12 +138,13 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="5dp"
-        android:text="**Password should atleast contain 6 characters"
-        android:textSize="10sp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:onClick="signOut"
+        android:text="@string/cancel_registration"
+        android:textColor="#0B0080"
         app:layout_constraintBottom_toTopOf="@+id/reg_Btn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/regPwd" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

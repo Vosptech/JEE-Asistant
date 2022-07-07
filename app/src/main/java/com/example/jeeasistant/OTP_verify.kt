@@ -3,16 +3,12 @@ package com.example.jeeasistant
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
+import com.example.jeeasistant.loginRelatedActivities.UserDetailRegister
 import com.google.firebase.auth.*
-import kotlinx.android.synthetic.main.activity_email_register.*
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_otp_verify.*
-import java.util.concurrent.TimeUnit
 
 class OTP_verify : AppCompatActivity() {
 //    private lateinit var digit1 : EditText
@@ -73,7 +69,7 @@ class OTP_verify : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
 
-                    val intent = Intent(this , User_Detail_Register::class.java)
+                    val intent = Intent(this , UserDetailRegister::class.java)
                     startActivity(intent)
                     finish()
                 } else {

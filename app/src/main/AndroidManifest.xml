@@ -17,13 +17,19 @@
         android:theme="@style/Theme.JEEAsistant"
         tools:targetApi="31">
         <activity
-            android:name=".User_Detail_Register"
+            android:name=".loginRelatedActivities.CheckIfUserAccAlreadyExits"
+            android:exported="false" />
+        <activity
+            android:name=".loginRelatedActivities.CheckRegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".loginRelatedActivities.UserDetailRegister"
             android:exported="false"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".OTP_verify"
             android:exported="false"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
@@ -32,7 +38,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".loginRelatedActivities.LoginActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>

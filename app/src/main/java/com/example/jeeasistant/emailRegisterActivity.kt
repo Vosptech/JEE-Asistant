@@ -33,9 +33,18 @@ class emailRegisterActivity : AppCompatActivity() {
         auth = Firebase.auth
         auth = FirebaseAuth.getInstance()
 
+
+
         // start verification on click of the button
         findViewById<Button>(R.id.registerBtn).setOnClickListener {
+            val phNo = findViewById<EditText>(R.id.phone).text.toString().trim()
+
+            if(phNo.isEmpty()){
+                phone.error ="Phone Number Required "
+                return@setOnClickListener
+            }else{
             login()
+        }
         }
         // Callback function for Phone Auth
         callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
