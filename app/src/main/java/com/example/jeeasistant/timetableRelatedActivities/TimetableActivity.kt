@@ -2,32 +2,20 @@ package com.example.jeeasistant.timetableRelatedActivities
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.jeeasistant.R
-import com.example.jeeasistant.databinding.ActivityLoginBinding
 import com.example.jeeasistant.databinding.ActivityTimetableBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.squareup.okhttp.internal.http.HttpDate.format
-import java.lang.reflect.Array
-import java.sql.Types.ARRAY
-import java.time.DayOfWeek
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import java.util.*
-import java.util.regex.Pattern
-import javax.xml.transform.Source
-import kotlin.collections.ArrayList
 
 class TimetableActivity : AppCompatActivity() {
     val users = ArrayList<User>()
@@ -59,6 +47,7 @@ class TimetableActivity : AppCompatActivity() {
         binding.extendedFab.setOnClickListener {
             val addTaskScreen = Intent(this, AddTaskActivity::class.java)
             startActivity(addTaskScreen)
+            finish()
         }
 //add task onclick listner ///////////////////////////////////////////////////////////////////////////////////
 

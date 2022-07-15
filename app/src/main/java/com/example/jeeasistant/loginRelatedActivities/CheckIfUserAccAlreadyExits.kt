@@ -1,13 +1,11 @@
 package com.example.jeeasistant.loginRelatedActivities
 
-import android.R
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import com.example.jeeasistant.MainActivity
-
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -73,12 +71,7 @@ class CheckIfUserAccAlreadyExits : AppCompatActivity() {
     }
 
     private fun signOut() {
-        mGoogleSignInClient?.signOut()?.addOnCompleteListener(this, object:
-            OnCompleteListener<Void> {
-            override fun onComplete(p0: Task<Void>) {
-
-            }
-        })
+        mGoogleSignInClient?.signOut()?.addOnCompleteListener(this, object: OnCompleteListener<Void> { override fun onComplete(p0: Task<Void>) {} })
         Firebase.auth.signOut()
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)

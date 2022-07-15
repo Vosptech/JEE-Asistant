@@ -1,19 +1,17 @@
 package com.example.jeeasistant.timetableRelatedActivities
 
 import android.app.DatePickerDialog
-import android.content.ContentValues
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import com.example.jeeasistant.MainActivity
 import com.example.jeeasistant.R
-import com.example.jeeasistant.loginRelatedActivities.UserDetailRegister
+import com.example.jeeasistant.databinding.ActivityAddTaskBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.ktx.firestore
@@ -23,7 +21,7 @@ import java.time.LocalDate
 import java.time.Period
 import java.time.format.DateTimeFormatter
 import java.util.*
-import java.util.concurrent.Future
+
 
 class AddTaskActivity : AppCompatActivity() {
     private lateinit var tvTask: EditText
@@ -31,12 +29,19 @@ class AddTaskActivity : AppCompatActivity() {
     private lateinit var addBtn: Button
     private val db = Firebase.firestore
 
+    private  lateinit var binding:ActivityAddTaskBinding
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_task)
         actionBar?.hide()
         supportActionBar?.hide()
+        binding = ActivityAddTaskBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        val progressBar = binding.progressBar1
+        progressBar.visibility = View.GONE
         tvDate = findViewById(R.id.TaskDate)
         addBtn = findViewById(R.id.addTask)
         val acct = GoogleSignIn.getLastSignedInAccount(this)
@@ -59,6 +64,8 @@ class AddTaskActivity : AppCompatActivity() {
             ).show()
         }
         addBtn.setOnClickListener {
+             val progressBar = binding.progressBar1
+            progressBar.visibility = View.VISIBLE
             val acc = GoogleSignIn.getLastSignedInAccount(this)
             if (acct != null) {
                 val personemail = acc?.email.toString()
@@ -199,6 +206,11 @@ class AddTaskActivity : AppCompatActivity() {
                                 db.collection("Gusers").document(personEmail).collection("tasks").document(formatedDate4)
                             updateArrya.update("TaskNames", FieldValue.arrayUnion(taskName))
                         }
+                        progressBar.visibility = View.GONE
+                        tvTask.setText("")
+                        tvDate.setText("")
+                        Toast.makeText(this,"Task Added",Toast.LENGTH_LONG).show()
+
                     } else {
                         Toast.makeText(
                             this,
@@ -221,10 +233,16 @@ class AddTaskActivity : AppCompatActivity() {
 
 
 //            Toast.makeText(this,"1:$formatedDate1 ,2: $formatedDate2 ,3: $formatedDate3 ,4: $formatedDate4", Toast.LENGTH_LONG).show()
-            }
+              }
 
 
         }
+
+    fun back(view: View) {
+        val intent = Intent(this,TimetableActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
 }
 //    private fun updateLable(mycalendar: Calendar) {
 //        val myFormat = "dd-MM-yyyy"
