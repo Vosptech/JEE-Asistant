@@ -9,11 +9,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.jeeasistant.databinding.ActivityEmailRegisterBinding
+import com.example.jeeasistant.databinding.ActivityLoginBinding
+import com.example.jeeasistant.databinding.ActivityTimetableBinding
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.*
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_email_register.*
 import java.util.concurrent.TimeUnit
 
 class emailRegisterActivity : AppCompatActivity() {
@@ -25,10 +27,13 @@ class emailRegisterActivity : AppCompatActivity() {
     lateinit var storedVerificationId: String
     lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
     private lateinit var callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
-
+    private  lateinit var binding: ActivityEmailRegisterBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_email_register)
+        binding = ActivityEmailRegisterBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
         supportActionBar?.hide()
         auth = Firebase.auth
         auth = FirebaseAuth.getInstance()
@@ -40,7 +45,7 @@ class emailRegisterActivity : AppCompatActivity() {
             val phNo = findViewById<EditText>(R.id.phone).text.toString().trim()
 
             if(phNo.isEmpty()){
-                phone.error ="Phone Number Required "
+                binding.phone.error ="Phone Number Required "
                 return@setOnClickListener
             }else{
             login()

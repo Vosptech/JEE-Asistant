@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.jeeasistant.R
+import com.example.jeeasistant.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -12,9 +13,9 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
+    private  lateinit var binding: ActivityLoginBinding
     private val RC_SIGN_IN = 73
     private var mGoogleSignInClient: GoogleSignInClient? = null
     private lateinit var auth: FirebaseAuth
@@ -23,6 +24,9 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
         actionBar?.hide()
         supportActionBar?.hide()
 
@@ -38,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        sign_in_button.setOnClickListener {
+        binding.signInButton.setOnClickListener {
             signIn()
         }
     } //OnCreate function ends here

@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.jeeasistant.databinding.ActivityEmailRegisterBinding
+import com.example.jeeasistant.databinding.ActivityMainBinding
+import com.example.jeeasistant.databinding.ActivityTimetableBinding
 import com.example.jeeasistant.loginRelatedActivities.LoginActivity
 import com.example.jeeasistant.timetableRelatedActivities.TimetableActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -16,16 +19,18 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_main.*
-
 class MainActivity : AppCompatActivity()  {
 
     private var mGoogleSignInClient : GoogleSignInClient? = null
     private lateinit var auth: FirebaseAuth
+    private  lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
         supportActionBar?.hide()
         auth = Firebase.auth
 
@@ -40,13 +45,13 @@ class MainActivity : AppCompatActivity()  {
 
         if(acct != null) {
             val personName = acct.displayName    //here the variable personName wil store the display name
-            person_name.text = personName
+            binding.personEmail.text = personName
             val personGivenName = acct.givenName
             val personFamilyName = acct.familyName
             val personEmail = acct.email
-            person_email.text = personEmail
+            binding.personEmail.text = personEmail
             val personId = acct.id
-            person_id.text = personId
+            binding.personId.text = personId
             val personPhoto: Uri? = acct.photoUrl
         }
 

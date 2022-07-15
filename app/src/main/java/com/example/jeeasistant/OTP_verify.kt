@@ -6,9 +6,12 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.jeeasistant.databinding.ActivityEmailRegisterBinding
+import com.example.jeeasistant.databinding.ActivityMainBinding
+import com.example.jeeasistant.databinding.ActivityOtpVerifyBinding
 import com.example.jeeasistant.loginRelatedActivities.UserDetailRegister
 import com.google.firebase.auth.*
-import kotlinx.android.synthetic.main.activity_otp_verify.*
+
 
 class OTP_verify : AppCompatActivity() {
 //    private lateinit var digit1 : EditText
@@ -20,9 +23,13 @@ class OTP_verify : AppCompatActivity() {
 
     lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
     lateinit var auth: FirebaseAuth
+    private  lateinit var binding: ActivityOtpVerifyBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_otp_verify)
+        binding = ActivityOtpVerifyBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
         actionBar?.hide()
         supportActionBar?.hide()
 
@@ -40,7 +47,7 @@ class OTP_verify : AppCompatActivity() {
         // get storedVerificationId from the intent
         val storedVerificationId= intent.getStringExtra("storedVerificationId")
         val number= intent.getStringExtra("number")
-         ph_display.text = number
+         binding.phDisplay.text = number
 //         resendToken = token
 
         // fill otp and call the on click on button

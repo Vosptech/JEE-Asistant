@@ -17,7 +17,7 @@
            android:textColor="@color/black" />
 
         <TextView
-            android:id="@+id/HtaskName"
+            android:id="@+id/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="task here"
