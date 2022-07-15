@@ -26,6 +26,14 @@
     <string name="bio">Bio</string>
     <string name="icon_">Icon</string>
     <string name="cancel_registration">Cancel Registration</string>
-
+    <string name="add_task">ADD TASK</string>
+    <string name="completed">Completed:</string>
+    <string name="total_tasks">Total Tasks:</string>
+    <string name="date">Date:</string>
+    <string name="my_tasks">My Tasks:</string>
+    <string name="task">Task</string>
+    <string name="add_task_1">ADD TASK</string>
+    <string name="remind_me_for_revision">Remind me for Revision</string>
+    <string name="_date">Date</string>
 
 </resources>

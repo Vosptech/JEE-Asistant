@@ -82,7 +82,7 @@ class UserDetailRegister : AppCompatActivity() {
 
                 if(it != null){
                     val un = it.data.toString()
-                    Toast.makeText(this,un,Toast.LENGTH_LONG).show()
+
                     if(un == "null"){
                         Toast.makeText(this,"username available",Toast.LENGTH_LONG).show()
                         val acct = GoogleSignIn.getLastSignedInAccount(this)

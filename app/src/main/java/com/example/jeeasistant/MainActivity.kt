@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.jeeasistant.loginRelatedActivities.LoginActivity
+import com.example.jeeasistant.timetableRelatedActivities.TimetableActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -51,6 +52,7 @@ class MainActivity : AppCompatActivity()  {
 
 
 
+
     }
     fun signOut(){
         mGoogleSignInClient?.signOut()?.addOnCompleteListener(this, object: OnCompleteListener<Void>{
@@ -67,6 +69,11 @@ class MainActivity : AppCompatActivity()  {
 
     fun signOut(view: View) {
         signOut()
+    }
+
+    fun scheduleScreen(view: View) {
+        val schedule = Intent(this,TimetableActivity::class.java)
+        startActivity(schedule)
     }
 
 
